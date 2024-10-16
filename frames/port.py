@@ -64,21 +64,21 @@ class Port:
             self.pfmyear = 5
 
     def riskTobar(self, risk):
-        riskstr = "low-risk"
+        riskstr = "Low-Risk"
         self.riskbar.set(risk/10)
         if risk >= 0 and risk <= 3: 
             self.riskbar.configure(progress_color="green")
-            riskstr = "low-risk"
-        elif risk > 3 and risk <= 5:
+            riskstr = "Low-Risk"
+        elif risk > 3 and risk <= 6:
             self.riskbar.configure(progress_color="yellow")
-            riskstr = "medium-risk"
-        elif risk > 5 and risk <= 8:
+            riskstr = "Medium-Risk"
+        elif risk > 6 and risk <= 8:
             self.riskbar.configure(progress_color="orange")
-            riskstr = "high-risk"
+            riskstr = "High-Risk"
         elif risk > 8 and risk <= 10:
             self.riskbar.configure(progress_color="red")
             self.label2.config(fg="red")
-            riskstr = "extreme-risk"
+            riskstr = "Extreme-Risk"
 
         return riskstr
 
