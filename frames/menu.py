@@ -117,16 +117,18 @@ class Menu:
         elif self.index == "Nasdaq":
             self.index = "NASDAQ"
 
-        varlist.append(self.index)
-        varlist.append(None if self.entry1.get() == "" else float(self.entry1.get()))
-        varlist.append(None if self.entry2.get() == "" else float(self.entry2.get()))
-        varlist.append(None if self.entry3.get() == "" else float(self.entry3.get()))
-        varlist.append(None if self.entry4.get() == "" else float(self.entry4.get()))
-        varlist.append(self.pfmyear)
-        varlist.append(None if self.entry5.get() == "" else float(self.entry5.get()))
-
-        print(varlist)
-
+        try:
+            varlist.append(self.index)
+            varlist.append(None if self.entry1.get() == "" else float(self.entry1.get()))
+            varlist.append(None if self.entry2.get() == "" else float(self.entry2.get()))
+            varlist.append(None if self.entry3.get() == "" else float(self.entry3.get()))
+            varlist.append(None if self.entry4.get() == "" else float(self.entry4.get()))
+            varlist.append(self.pfmyear)
+            varlist.append(None if self.entry5.get() == "" else float(self.entry5.get()))
+        except:
+            self.warnlabel.config(text="Please enter numerical information", fg="red")
+            self.warnlabel.grid(row=8, column=2, pady=10)
+            return 0
 
         isNone = False
         for ele in varlist:
@@ -146,12 +148,10 @@ class Menu:
             self.warnlabel.config(text="Input Completed!", fg="green")
             self.warnlabel.grid(row=8, column=2, pady=10)
                 
-
         v = Vector(varlist[0], varlist[1], varlist[2], varlist[3], varlist[4], varlist[5], varlist[6])
         if len(vectorlist) > 0:
             vectorlist.clear()
         vectorlist.extend(v.filter_stocks())
-        print('hello',vectorlist)
 
         #inside labelframe result
         for i in range(10):
