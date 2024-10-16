@@ -74,13 +74,13 @@ class Guide:
         self.button = tk.Button(self.lbframe2,width=buttonwidth,text="Diversified Portfolio")
         self.button.grid(row=3,column=1,pady=5,sticky='w')
 
-        self.epslabel = tk.Label(self.lbframe2,text="3-5 : ")
+        self.epslabel = tk.Label(self.lbframe2,text="3-6 : ")
         self.epslabel.grid(row=4,column=0,pady=5)
 
         self.button = tk.Button(self.lbframe2,width=buttonwidth,text="Balanced Portfolio")
         self.button.grid(row=4,column=1,pady=5,sticky='w')
 
-        self.roelabel = tk.Label(self.lbframe2,text="5-8 : ")
+        self.roelabel = tk.Label(self.lbframe2,text="6-8 : ")
         self.roelabel.grid(row=5,column=0,pady=5)
 
         self.button = tk.Button(self.lbframe2,width=buttonwidth,text="Proactived Portfolio")
